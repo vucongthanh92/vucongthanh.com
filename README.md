@@ -1,2 +1,1 @@
-# vucongthanh.com
-website cá nhân
+xin chào đây là website cá nhân của tôi
