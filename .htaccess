@@ -1,0 +1,89 @@
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine on
+RewriteBase /
+RewriteRule \.(css|js|jpg|jpeg|png|gif|ico)$ - [L]
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^404.html$    /index.php?mod=404 [L]
+RewriteRule ^$            /index.php [L]
+RewriteRule ^admincp/$             /admincp/index.php [L]
+
+RewriteRule ^payment/addcart.html$    /index.php?mod=payment&act=addcart [L]
+RewriteRule ^payment/delcart-([a-zA-Z0-9-]*).html$    /index.php?mod=payment&act=delcart&id=$1 [L]
+RewriteRule ^payment/editcart.html$    /index.php?mod=payment&act=editcart [L]
+RewriteRule ^gio-hang.html$    /index.php?mod=payment&act=showcart [L]
+RewriteRule ^lien-he.html$           /index.php?mod=lien-he [L]
+RewriteRule ^gioi-thieu.html$           /index.php?mod=bai-viet&act=chi-tiet&id=4 [L]
+
+RewriteRule ^khoa-hoc.html$           /index.php?mod=khoa-hoc&act=danh-muc [L]
+RewriteRule ^khoa-hoc/([a-zA-Z0-9-]*).html$      /index.php?mod=khoa-hoc&act=chi-tiet&id=$1 [L]
+
+RewriteRule ^search/$           /index.php?mod=san-pham&act=tim-kiem [L]
+RewriteRule ^website.html$    /index.php?mod=san-pham&act=allprod [L]
+RewriteRule ^website.html/p([0-9]*)$    /index.php?mod=san-pham&act=allprod&p=$1 [L]
+RewriteRule ^website/giao-dien.html$    /index.php?mod=san-pham&act=theme [L]
+RewriteRule ^website/giao-dien/([a-zA-Z0-9-]*).html$    /index.php?mod=san-pham&act=chi-tiet-theme&id=$1 [L]
+RewriteRule ^website/([a-zA-Z0-9-]*).html$    /index.php?mod=san-pham&act=danh-muc&id=$1 [L]
+RewriteRule ^website/([a-zA-Z0-9-]*).html/p([0-9]*)$    /index.php?mod=san-pham&act=danh-muc&id=$1&p=$2 [L]
+RewriteRule ^website/([a-zA-Z0-9-]*)/([a-zA-Z0-9-]*).html$           /index.php?mod=san-pham&act=chi-tiet&id=$2 [L]
+
+RewriteRule ^seo.html$      /index.php?mod=works&act=allprod [L]
+RewriteRule ^seo.html/p([0-9]*)$      /index.php?mod=works&act=allprod&p=$1 [L]
+RewriteRule ^seo/([a-zA-Z0-9-]*).html$      /index.php?mod=works&act=danh-muc&id=$1 [L]
+RewriteRule ^seo/([a-zA-Z0-9-]*).html/p([0-9]*)$      /index.php?mod=works&act=danh-muc&id=$1&p=$2 [L]
+RewriteRule ^seo/([a-zA-Z0-9-]*)/([a-zA-Z0-9-]*).html$          /index.php?mod=works&act=chi-tiet&id=$2 [L]
+
+RewriteRule ^nhiep-anh.html$      /index.php?mod=tin-tuc&act=allprod [L]
+RewriteRule ^nhiep-anh.html/p([0-9]*)$      /index.php?mod=tin-tuc&act=allprod&p=$1 [L]
+RewriteRule ^nhiep-anh/album.html$    /index.php?mod=tin-tuc&act=album [L]
+RewriteRule ^nhiep-anh/album/([a-zA-Z0-9-]*).html$    /index.php?mod=tin-tuc&act=chi-tiet-album&id=$1 [L]
+RewriteRule ^nhiep-anh/([a-zA-Z0-9-]*).html$        /index.php?mod=tin-tuc&act=danh-muc&id=$1 [L]
+RewriteRule ^nhiep-anh/([a-zA-Z0-9-]*).html/p([0-9]*)$        /index.php?mod=tin-tuc&act=danh-muc&id=$1&p=$2 [L]
+RewriteRule ^nhiep-anh/([a-zA-Z0-9-]*)/([a-zA-Z0-9-]*).html$         /index.php?mod=tin-tuc&act=chi-tiet&id=$2 [L]
+
+RewriteRule ^sai-gon-viet-voi.html$      /index.php?mod=sai-gon&act=danh-muc [L]
+RewriteRule ^sai-gon-viet-voi.html/p([0-9]*)$      /index.php?mod=sai-gon&act=danh-muc&p=$1 [L]
+RewriteRule ^sai-gon/([a-zA-Z0-9-]*).html$      /index.php?mod=sai-gon&act=chi-tiet&id=$1 [L]
+
+RewriteRule ^admincp/logout$    /admincp/index.php?mod=logout [L]
+RewriteRule ^admincp/([a-zA-Z]*)/([a-zA-Z]*)$    /admincp/index.php?mod=$1&act=$2 [L]
+RewriteRule ^admincp/([a-zA-Z]*)/([a-zA-Z]*)/([0-9]*)$    /admincp/index.php?mod=$1&act=$2&id=$3 [L]
+RewriteRule ^admincp/([a-zA-Z]*)/([a-zA-Z]*)/([a-z0-9]*)$    /admincp/index.php?mod=$1&act=$2&p=$3 [L]
+RewriteRule ^admincp/([a-zA-Z]*)/([a-zA-Z]*)/([0-9]*)/([a-z0-9]*)$    /admincp/index.php?mod=$1&act=$2&id=$3&p=$4 [L]
+RewriteRule ^login.php$    /admincp/login.php [L]
+RewriteRule ^getContent.php/(.*)/(.*)$    /admincp/getContent.php?nocache=$1&name=$2 
+
+ErrorDocument 404 /404.html
+<FilesMatch "\\.(js|css|html|htm|php|xml)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+
+
+<Files .htaccess>
+  deny from all
+</Files>
+
+
+<Files .staccess>
+  deny from all
+</Files>
+
+# Disable .htaccess viewing from browser
+<files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</files>
+
+# Disable config.php viewing from browser
+<files ~ "\config.php$">
+    deny from all
+</files>
+
+
+# deny most common except .php/.html
+<FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module|exe)$">
+deny from all
+</FilesMatch>
