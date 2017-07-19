@@ -1,1 +1,1 @@
-xin chào đây là website cá nhân của tôi
+chúc một ngày tốt lành
