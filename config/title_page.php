@@ -1,0 +1,11 @@
+<?php	
+$title['facebook']='https://www.facebook.com/seovswebsite/';	
+$title['gplus']='https://plus.google.com/u/0/108277050291975889646/posts';	
+$title['twitter']='https://twitter.com/vucongthanh92';	
+$title['youtube']='https://www.youtube.com/channel/UCidD-HMZCGIWG1XkpLvQv2Q';
+$title['linkedin']='https://www.linkedin.com/in/th%C3%A0nh-v%C5%A9-94973a89';
+$title['blogger']='http://tourvivu.blogspot.com/';
+$title['hotline']='0981643135';
+$title['email_send']='ngoikhoctrencay2016@gmail.com';	
+$title['pass_send']='thietke247';		
+$title['emaillienhe_vn']='vucongthanh92@gmail.com';?>

@@ -1,0 +1,123 @@
+/*
+* 	Owl Carousel Owl Demo Theme 
+*	v1.3.3
+*/
+
+.owl-theme .owl-controls{
+	text-align: center;
+	display:none;
+}
+
+/* Styling Next and Prev buttons */
+
+
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+	text-decoration: none;
+}
+
+.owl-pagination 
+{
+    border-radius: 13px;
+    float: left;
+    margin-left: 48%;
+    margin-top: 25px;
+    padding: 4px 9px;
+    position: relative;
+    text-align: center;
+    z-index: 9;
+}
+
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span
+{
+    background-color:#FFF;
+    border: medium none;
+    border-radius: 20px;
+    display: block;
+    height: 12px;
+    margin: 5px 3px;
+    opacity: 1;
+    width: 12px;
+}
+.owl-theme .owl-controls .owl-page.active span.owl-numbers{ background-color:#8dc63f;}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	background-repeat: no-repeat;
+	background-color:#8dc63f;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 11px;
+	display: inline-block;
+	margin-right: 4px;
+	cursor: pointer;
+	background-position: -467px -185px;
+	background-color:#fff;
+	text-indent:-9999px;
+}
+
+/* preloading images */
+.owl-item.loading{
+	min-height: 155px;
+	background: url(AjaxLoader.gif) no-repeat center center
+}
+.owl-buttons {
+	z-index:999;
+	width:100%;
+}
+.owl-prev {
+    background-repeat: no-repeat;
+	display: block;
+	position: absolute;
+	left: 0;
+	z-index: 100;
+	width: 34px;
+    height: 74px;
+	background-image: url(../images/left-l.png);
+	top:50%;
+	opacity:0.5;
+	margin-top:-37px;
+}
+.owl-next{
+    background-repeat: no-repeat;
+	display: block;
+	background-image: url(../images/right-r.png);
+	position: absolute;
+	right: 0;
+	z-index: 100;
+	 width: 34px;
+    height: 74px;
+	top:50%;
+	opacity:0.5;
+	margin-top:-37px;
+}
+.owl-theme .owl-controls .owl-buttons div {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    text-indent: 999999px;
+}
+#owl-demo .item img {
+    width: auto !important;
+	height:425px !important;
+}
